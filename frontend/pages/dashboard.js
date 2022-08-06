@@ -41,14 +41,31 @@ function Copyright(props) {
 
 const drawerWidth = 240;
 
+const headerColor = createTheme({
+  palette: {
+    background: {
+      default: "#1b97b6",
+    },
+  },
+});
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open",
 })(({ theme, open }) => ({
   zIndex: theme.zIndex.drawer + 1,
-  transition: theme.transitions.create(["width", "margin"], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
+  transition: theme.transitions.create(
+    ["width", "margin"],
+    {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }
+    // {
+    //   palette: {
+    //     background: {
+    //       default: "#1b97b6",
+    //     },
+    //   },
+    // }
+  ),
   ...(open && {
     marginLeft: drawerWidth,
     width: `calc(100% - ${drawerWidth}px)`,
@@ -100,6 +117,7 @@ function DashboardContent() {
         <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
+              backgroundColor: "#1b97b6",
               pr: "24px", // keep right padding when drawer closed
             }}
           >

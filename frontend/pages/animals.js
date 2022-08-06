@@ -18,10 +18,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import { mainListItems, secondaryListItems } from "./ListItem";
-import { Table } from "@mui/material";
+// import { Table } from "@mui/material";
 // import Chart from "./Chart";
-// import Deposits from "./Deposits";
-// import Orders from "./Orders";
+import DataTable from "./animalsTable";
 
 function Copyright(props) {
   return (
@@ -102,6 +101,7 @@ function DashboardContent() {
         <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
+              backgroundColor: "#1b97b6",
               pr: "24px", // keep right padding when drawer closed
             }}
           >
@@ -169,25 +169,20 @@ function DashboardContent() {
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
               {/* Chart */}
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
+              <Grid item sm={12} md={8} lg={9}>
+                {/* <Paper
                   sx={{
                     p: 2,
                     display: "flex",
                     flexDirection: "column",
                     height: 240,
                   }}
-                >
-                  {/* <Chart /> */}
-                </Paper>
+                > */}
+                {/* <Chart /> */}
+                <DataTable />
+                {/* </Paper> */}
               </Grid>
               {/* Recent Deposits */}
-
-              <Grid item xs={12}>
-                <Paper
-                  sx={{ p: 2, display: "flex", flexDirection: "column" }}
-                ></Paper>
-              </Grid>
             </Grid>
             <Copyright sx={{ pt: 4 }} />
           </Container>

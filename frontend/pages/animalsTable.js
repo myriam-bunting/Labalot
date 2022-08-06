@@ -2,27 +2,27 @@ import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 
 const columns = [
-  { field: "id", headerName: "ID", width: 70 },
-  { field: "tag", headerName: "Tag", width: 70 },
-  { field: "gender", headerName: "Gender", width: 70 },
+  { field: "id", headerName: "ID", width: 80 },
+  { field: "tag", headerName: "Tag", width: 80 },
+  { field: "gender", headerName: "Gender", width: 80 },
   {
     field: "age",
     headerName: "Age",
     type: "number",
-    width: 70,
+    width: 80,
   },
-  { field: "genotype", headerName: "Genotype", width: 90 },
-  { field: "phenotype", headerName: "Phenotype", width: 90 },
-  { field: "experiment_id", headerName: "experiment_id", width: 70 },
-  {
-    field: "id",
-    headerName: "",
-    description: "This column has a value getter and is not sortable.",
-    sortable: false,
-    width: 160,
-    valueGetter: (params) =>
-      `${params.row.id || ""} ${params.row.genotype || ""}`,
-  },
+  { field: "genotype", headerName: "Genotype", width: 100 },
+  { field: "phenotype", headerName: "Phenotype", width: 100 },
+  { field: "experiment_id", headerName: "experiment_id", width: 80 },
+  //   {
+  //     field: "selected",
+  //     headerName: "",
+  //     description: "This column has a value getter and is not sortable.",
+  //     sortable: false,
+  //     width: 160,
+  //     valueGetter: (params) =>
+  //       `${params.row.id || ""} ${params.row.genotype || ""}`,
+  //   },
 ];
 
 const rows = [
@@ -84,12 +84,12 @@ const rows = [
 
 export default function DataTable() {
   return (
-    <div style={{ height: 400, width: "100%" }}>
+    <div style={{ height: "90vh", width: "90vw", paddingRight: 8 }}>
       <DataGrid
         rows={rows}
         columns={columns}
-        pageSize={5}
-        rowsPerPageOptions={[5]}
+        pageSize={100}
+        rowsPerPageOptions={[100]}
         checkboxSelection
       />
     </div>
