@@ -1,15 +1,26 @@
 .container {
   padding: 0 2rem;
+  min-width: 100vw;
 }
-
+.splash {
+  background-color: rgba(56, 202, 173, 0.3);
+  min-width: 100vw;
+}
+.subsplash {
+  background-color: rgba(56, 202, 173, 0.3);
+  height: 40px;
+  text-align: center;
+}
 .main {
   min-height: 100vh;
+  min-width: 100vw;
   padding: 4rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #1b97b6;
 }
 
 .footer {
@@ -29,7 +40,7 @@
 }
 
 .title a {
-  color: #21713c;
+  color: #d2ded6;
   text-decoration: none;
 }
 
@@ -37,17 +48,20 @@
 .title a:focus,
 .title a:active {
   text-decoration: underline;
+  text-decoration-style: wavy;
 }
 
 .title {
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
+  padding-top: 0.5em;
 }
 
 .title,
 .description {
   text-align: center;
+  min-width: 100vw;
 }
 
 .description {
@@ -56,14 +70,14 @@
   font-size: 1.5rem;
 }
 
-.code {
+/* .code {
   background: #fafafa;
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
-}
+} */
 
 .grid {
   display: flex;
@@ -77,25 +91,26 @@
   margin: 1rem;
   padding: 1.5rem;
   text-align: left;
-  color: inherit;
+  color: #070707;
   text-decoration: none;
-  border: 1px solid #eaeaea;
+  border: 1px solid #1b97b6;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 300px;
-  background-color: #d1e9d9;
 }
 
 .card:hover,
 .card:focus,
 .card:active {
   color: #1d5b32;
-  border-color: #1d5b32;
+  /* border-color: #1d5b32; */
+  /* border: 1px solid #cadfd1; */
 }
 
 .card h2 {
   margin: 0 0 1rem 0;
   font-size: 1.5rem;
+  color: #0f2b18;
 }
 
 .card p {

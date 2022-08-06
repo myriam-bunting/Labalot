@@ -12,15 +12,22 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Labalot!</a>
-        </h1>
+        <div className={styles.splash}>
+          <h1 className={styles.title}>
+            Welcome to <a href="https://nextjs.org">Labalot </a>
+          </h1>
 
-        <p className={styles.description}>
-          Lab animal management tool <br /> Created by researchers, for
-          researchers
-        </p>
-
+          <p className={styles.description}>
+            Lab animal management tool <br /> Created by researchers, for
+            researchers
+          </p>
+          <div className={styles.subsplash}>
+            {/* <p>
+              Easy to use management system for laboratory animal colonies.
+              Making the most of every life.
+            </p> */}
+          </div>
+        </div>
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Upload your Data</h2>
@@ -57,7 +64,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{" "}
+          Powered by{" imagination "}
           <span className={styles.logo}>
             <Image
               src="/mouseIcon.png"
