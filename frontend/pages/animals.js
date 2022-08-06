@@ -16,11 +16,12 @@ import Paper from "@mui/material/Paper";
 import Link from "@mui/material/Link";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import NotificationsIcon from "@mui/icons-material/Notifications";
-import { mainListItems, secondaryListItems } from "./ListItem";
+import AddIcon from "@mui/icons-material/Add";
+import { mainListItems, secondaryListItems } from "./iconList";
 // import { Table } from "@mui/material";
 // import Chart from "./Chart";
 import DataTable from "./animalsTable";
+import { fontSize } from "@mui/system";
 
 function Copyright(props) {
   return (
@@ -127,9 +128,30 @@ function DashboardContent() {
               Animals
             </Typography>
             <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
-              </Badge>
+              <AddIcon />
+              <Typography
+                component="h1"
+                variant="h6"
+                color="inherit"
+                noWrap
+                sx={{ flexGrow: 1 }}
+              >
+                Animals
+              </Typography>
+            </IconButton>
+            <IconButton color="inherit">
+              {/* <Badge badgeContent={4} color="secondary"> */}
+              <AddIcon />
+              <Typography
+                component="h1"
+                variant="h6"
+                color="inherit"
+                noWrap
+                sx={{ flexGrow: 1 }}
+              >
+                Cages
+              </Typography>
+              {/* </Badge> */}
             </IconButton>
           </Toolbar>
         </AppBar>

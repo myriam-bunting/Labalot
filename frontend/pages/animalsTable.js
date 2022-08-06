@@ -27,7 +27,7 @@ const columns = [
 
 const rows = [
   {
-    id: 1,
+    id: 6,
     tag: "652",
     gender: "female",
     age: 3,
