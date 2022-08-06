@@ -17,11 +17,16 @@ import Link from "@mui/material/Link";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import AddIcon from "@mui/icons-material/Add";
-import { mainListItems, secondaryListItems } from "./iconList";
+import IconListItems, {
+  mainListItems,
+  secondaryListItems,
+} from "../components/IconList";
 // import { Table } from "@mui/material";
 // import Chart from "./Chart";
-import DataTable from "./animalsTable";
+import DataTable from "../components/AnimalsTable";
 import { fontSize } from "@mui/system";
+import Newcage from "../components/Newcage";
+import FormDialog from "../components/formModal";
 
 function Copyright(props) {
   return (
@@ -91,14 +96,36 @@ const mdTheme = createTheme();
 
 function DashboardContent() {
   const [open, setOpen] = React.useState(true);
+
   const toggleDrawer = () => {
     setOpen(!open);
   };
+  const [cageModal, setCageModal] = React.useState(false);
+
+  const toggleCageModal = () => {
+    setCageModal(!cageModal);
+    console.log(`modal state changed`);
+  };
+  //   const handleOpen = () => setCageModal(true);
+  //   const handleClose = () => setCageModal(false);
+  // ========== openForm
+  const [openForm, setOpenForm] = React.useState(false);
+  const handleClickOpen = () => {
+    setOpenForm(true);
+  };
+  const handleClickClose = () => {
+    setOpenForm(false);
+  };
+  //   const toggleForm = () => {
+  //     setOpen(!openForm);
+  //       };
+  // ==============
 
   return (
     <ThemeProvider theme={mdTheme}>
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
+
         <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
@@ -127,20 +154,14 @@ function DashboardContent() {
             >
               Animals
             </Typography>
-            <IconButton color="inherit">
-              <AddIcon />
-              <Typography
-                component="h1"
-                variant="h6"
-                color="inherit"
-                noWrap
-                sx={{ flexGrow: 1 }}
-              >
-                Animals
-              </Typography>
-            </IconButton>
-            <IconButton color="inherit">
-              {/* <Badge badgeContent={4} color="secondary"> */}
+            <IconButton
+              color="inherit"
+              onClick={() => setCageModal(true)}
+              type="Animal"
+            >
+              {cageModal && (
+                <Newcage open={cageModal} onClose={toggleCageModal}></Newcage>
+              )}
               <AddIcon />
               <Typography
                 component="h1"
@@ -151,7 +172,22 @@ function DashboardContent() {
               >
                 Cages
               </Typography>
-              {/* </Badge> */}
+            </IconButton>
+            <IconButton color="inherit" onClick={handleClickOpen} type="Cage">
+              {openForm && (
+                <FormDialog open={openForm} onClose={handleClickClose} />
+              )}
+              <AddIcon />
+
+              <Typography
+                component="h1"
+                variant="h6"
+                color="inherit"
+                noWrap
+                sx={{ flexGrow: 1 }}
+              >
+                Animals
+              </Typography>
             </IconButton>
           </Toolbar>
         </AppBar>
@@ -170,7 +206,7 @@ function DashboardContent() {
           </Toolbar>
           <Divider />
           <List component="nav">
-            {/* {mainListItems} */}
+            <IconListItems />
             <Divider sx={{ my: 1 }} />
             {/* {secondaryListItems} */}
           </List>
