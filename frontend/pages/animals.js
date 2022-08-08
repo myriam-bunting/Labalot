@@ -25,8 +25,9 @@ import IconListItems, {
 // import Chart from "./Chart";
 import DataTable from "../components/AnimalsTable";
 import { fontSize } from "@mui/system";
-import Newcage from "../components/Newcage";
+import NewCage from "../components/NewCage";
 import FormDialog from "../components/formModal";
+import NewAnimal from "../components/NewAnimal";
 
 function Copyright(props) {
   return (
@@ -101,13 +102,18 @@ function DashboardContent() {
     setOpen(!open);
   };
   const [cageModal, setCageModal] = React.useState(false);
+  const [animalModal, setAnimalModal] = React.useState(false);
 
   const toggleCageModal = () => {
     setCageModal(!cageModal);
     console.log(`modal state changed`);
   };
-  //   const handleOpen = () => setCageModal(true);
-  //   const handleClose = () => setCageModal(false);
+
+  const toggleAnimalModal = () => {
+    setAnimalModal(!animalModal);
+    console.log(`modal state changed`);
+  };
+
   // ========== openForm
   const [openForm, setOpenForm] = React.useState(false);
   const handleClickOpen = () => {
@@ -154,7 +160,7 @@ function DashboardContent() {
             >
               Animals
             </Typography>
-            <IconButton color="inherit" onClick={toggleCageModal} type="Animal">
+            <IconButton color="inherit" onClick={toggleCageModal} type="Cage">
               <AddIcon />
               <Typography
                 component="h1"
@@ -167,10 +173,11 @@ function DashboardContent() {
               </Typography>
             </IconButton>
 
-            <IconButton color="inherit" onClick={handleClickOpen} type="Cage">
-              {openForm && (
-                <FormDialog open={openForm} onClose={handleClickClose} />
-              )}
+            <IconButton
+              color="inherit"
+              onClick={toggleAnimalModal}
+              type="Animal"
+            >
               <AddIcon />
 
               <Typography
@@ -220,11 +227,18 @@ function DashboardContent() {
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Box>
               {cageModal && (
-                <Newcage
+                <NewCage
                   sx={{ zIndex: 100 }}
                   open={cageModal}
                   onClose={toggleCageModal}
-                ></Newcage>
+                ></NewCage>
+              )}
+              {animalModal && (
+                <NewAnimal
+                  sx={{ zIndex: 100 }}
+                  open={animalModal}
+                  onClose={toggleAnimalModal}
+                ></NewAnimal>
               )}
             </Box>
             <Grid container spacing={3}>

@@ -1,10 +1,10 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import { FormControlLabel, FormGroup } from "@mui/material";
+import { FormControlLabel, FormGroup, Typography } from "@mui/material";
 import { Checkbox } from "@mui/material";
 
-export default function Newcage(props) {
+export default function NewCage(props) {
   return (
     <Box
       component="form"
@@ -15,6 +15,7 @@ export default function Newcage(props) {
       autoComplete="off"
     >
       <div>
+        <Typography>Add a new cage: </Typography>
         <TextField
           disabled
           id="outlined-disabled"

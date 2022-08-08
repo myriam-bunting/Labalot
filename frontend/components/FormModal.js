@@ -6,7 +6,7 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import Newcage from "./Newcage";
+import Newcage from "./NewCage";
 
 export default function FormDialog(props) {
   const [open, setOpen] = React.useState(false);
