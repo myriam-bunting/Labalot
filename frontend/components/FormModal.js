@@ -6,32 +6,27 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import Newcage from "./Newcage";
 
 export default function FormDialog(props) {
-  // const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
 
-  // const handleClickOpen = () => {
-  //   props.setOpenForm(true);
-  // };
+  const handleClickOpen = () => {
+    props.setOpenForm(true);
+  };
 
   return (
     <div>
-      {/* <Button variant="outlined" onClick={handleClickOpen}>
-        Open form dialog
-      </Button> */}
-      <Dialog open={open} onClose={handleClose}>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-form-newcage"
+        aria-describedby="modal-form-description"
+      >
         <DialogTitle>New {props.type}</DialogTitle>
         <DialogContent>
           <DialogContentText>Enter new {props.type} details:</DialogContentText>
-          <TextField
-            autoFocus
-            margin="dense"
-            id="name"
-            label="Email Address"
-            type="email"
-            fullWidth
-            variant="standard"
-          />
+          <Newcage></Newcage>
         </DialogContent>
         <DialogActions>
           <Button onClick={props.onClose}>Cancel</Button>

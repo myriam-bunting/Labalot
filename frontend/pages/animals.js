@@ -154,14 +154,7 @@ function DashboardContent() {
             >
               Animals
             </Typography>
-            <IconButton
-              color="inherit"
-              onClick={() => setCageModal(true)}
-              type="Animal"
-            >
-              {cageModal && (
-                <Newcage open={cageModal} onClose={toggleCageModal}></Newcage>
-              )}
+            <IconButton color="inherit" onClick={toggleCageModal} type="Animal">
               <AddIcon />
               <Typography
                 component="h1"
@@ -173,6 +166,7 @@ function DashboardContent() {
                 Cages
               </Typography>
             </IconButton>
+
             <IconButton color="inherit" onClick={handleClickOpen} type="Cage">
               {openForm && (
                 <FormDialog open={openForm} onClose={handleClickClose} />
@@ -208,7 +202,6 @@ function DashboardContent() {
           <List component="nav">
             <IconListItems />
             <Divider sx={{ my: 1 }} />
-            {/* {secondaryListItems} */}
           </List>
         </Drawer>
         <Box
@@ -225,6 +218,15 @@ function DashboardContent() {
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+            <Box>
+              {cageModal && (
+                <Newcage
+                  sx={{ zIndex: 100 }}
+                  open={cageModal}
+                  onClose={toggleCageModal}
+                ></Newcage>
+              )}
+            </Box>
             <Grid container spacing={3}>
               {/* Chart */}
               <Grid item sm={12} md={8} lg={9}>

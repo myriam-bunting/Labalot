@@ -18,19 +18,17 @@ export default function Newcage(props) {
         <TextField
           disabled
           id="outlined-disabled"
-          label="Cage ID"
-          // defaultValue={props.cage_id}
+          label="Animal ID"
+          // defaultValue={props.animal_id}
           variant="outlined"
         />
-        <TextField
-          id="outlined-cageName"
-          label="Cage name"
-          // defaultValue={props.cage_id}
-        />
+        <TextField id="outlined-tag" label="Tag" />
+        <TextField id="outlined-gender" label="gender" defaultValue="tbc" />
+        <TextField id="outlined-gender" label="genotype" defaultValue="tbc" />
         <TextField
           id="outlined-experiementID"
           label="Experiment ID"
-          defaultValue=""
+          defaultValue="NULL"
         />
 
         <TextField
@@ -49,8 +47,6 @@ export default function Newcage(props) {
             label="Breeding Cage"
           />
         </FormGroup>
-        <br />
-        <br />
       </div>
     </Box>
   );
