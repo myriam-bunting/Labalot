@@ -169,7 +169,7 @@ function DashboardContent() {
                 noWrap
                 sx={{ flexGrow: 1 }}
               >
-                Cages
+                Cage
               </Typography>
             </IconButton>
 
@@ -187,7 +187,7 @@ function DashboardContent() {
                 noWrap
                 sx={{ flexGrow: 1 }}
               >
-                Animals
+                Animal
               </Typography>
             </IconButton>
           </Toolbar>

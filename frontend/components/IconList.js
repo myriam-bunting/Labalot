@@ -10,7 +10,6 @@ function IconListItems() {
       <div>
         <IconButton
           sx={{
-            // marginRight: "80px",
             color: "#1b97b6",
           }}
         >
@@ -23,7 +22,7 @@ function IconListItems() {
           nowrap
           sx={
             {
-              // ...(open && { display: "display-outside", displayPrint: "inline" }),
+              // ...(!open && { display: "hidden" }),
             }
           }
         >

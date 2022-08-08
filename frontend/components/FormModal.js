@@ -20,7 +20,7 @@ export default function FormDialog(props) {
       <Dialog
         open={open}
         onClose={handleClose}
-        aria-labelledby="modal-form-newcage"
+        aria-labelledby="modal-form-newuser"
         aria-describedby="modal-form-description"
       >
         <DialogTitle>New {props.type}</DialogTitle>
