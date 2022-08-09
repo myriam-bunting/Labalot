@@ -73,6 +73,12 @@ export default function NewAnimal(props) {
           label="Birth date"
           defaultValue={formattedToday}
         />
+        <TextField
+          id="outlined-phenotype"
+          label="Phenotype"
+          ref={phenotypeRef}
+        />
+
         <TextField id="outlined-experiementID" label="Experiment ID" />
         <TextField id="outlined-search" label="Search field" type="search" />
         <Button onClick={handleSubmit}>ADD ANIMAL</Button>

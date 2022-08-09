@@ -46,7 +46,6 @@ export default function NewCage(props) {
       phenotype: phenotypeRef.current.value,
       birthDate: birthDateRef.current.value,
       experimentId: experimentIdRef.current.value,
-      phenotype: phenotypeRef.current.value,
     };
 
     if (
@@ -97,12 +96,6 @@ export default function NewCage(props) {
           label="Experiment ID"
           ref={experimentIdRef}
         />
-        <TextField
-          id="outlined-phenotype"
-          label="Phenotype"
-          ref={phenotypeRef}
-        />
-
         <TextField
           id="outlined-number"
           label="Number of animals"
