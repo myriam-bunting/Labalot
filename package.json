@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "name": "GA_Project4_Labalot",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {}
+}
